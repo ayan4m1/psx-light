@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.erb": "erb",
+    "bit": "cpp",
+    "*.tcc": "cpp",
+    "random": "cpp",
+    "functional": "cpp",
+    "limits": "cpp",
+    "ostream": "cpp",
+    "streambuf": "cpp",
+    "tuple": "cpp"
+  }
+}
