@@ -1,10 +1,6 @@
 #include "Light.hpp"
 
-// uint8_t LightManager::pinArray[PIN_COUNT] = PIN_ARRAY;
-// bool LightManager::stateArray[PIN_COUNT] = {false, false, false, false};
-// bool LightManager::strobeArray[PIN_COUNT] = {false, false, false, false};
-// bool LightManager::strobeDirArray[PIN_COUNT] = {true, true, true, true};
-// uint8_t LightManager::brightnessArray[PIN_COUNT] = {255, 255, 255, 255};
+Light::Light(uint8_t pin) { this->pin = pin; }
 
 Light LightManager::lights[PIN_COUNT] = LIGHT_ARRAY;
 
@@ -57,7 +53,7 @@ void LightManager::setAllBrightness(uint8_t brightness) {
 
 uint8_t LightManager::getBrightness(uint8_t index) {
   if (index < 0 || index > PIN_COUNT) {
-    return;
+    return 0;
   }
 
   return lights[index].brightness;
@@ -79,7 +75,7 @@ void LightManager::setAllState(bool state) {
 
 bool LightManager::getState(uint8_t index) {
   if (index < 0 || index > PIN_COUNT) {
-    return;
+    return false;
   }
 
   return lights[index].enabled;
@@ -101,7 +97,7 @@ void LightManager::setAllStrobe(bool strobe) {
 
 bool LightManager::getStrobe(uint8_t index) {
   if (index < 0 || index > PIN_COUNT) {
-    return;
+    return false;
   }
 
   return lights[index].strobe;

@@ -26,8 +26,8 @@ void doubleClick(Button2& btn) {
 }
 
 void tripleClick(Button2& btn) {
-  lights.setAllState(!toggle);
   toggle = !toggle;
+  lights.setAllState(toggle);
 }
 
 void setup() {
