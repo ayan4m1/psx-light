@@ -1,6 +1,12 @@
 #include "Light.hpp"
 
-Light::Light(uint8_t pin) { this->pin = pin; }
+Light::Light(uint8_t pin) {
+  this->pin = pin;
+  this->enabled = false;
+  this->brightness = 0;
+  this->strobe = false;
+  this->strobeDirection = false;
+}
 
 Light LightManager::lights[PIN_COUNT] = LIGHT_ARRAY;
 
